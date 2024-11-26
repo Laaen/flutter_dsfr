@@ -17,18 +17,22 @@ class DSFRHeader extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return PreferredSize(preferredSize: Size.fromHeight(150),
-      child: Container( margin: EdgeInsets.all(20),
-        child: Row(crossAxisAlignment: CrossAxisAlignment.center,
+      child: Container(margin: EdgeInsets.all(20), child:
+        Column(
           children: [
-            DSFRBlocMarque(intitule: intitule),
-            Column( mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:[
-                DSFRText(text: "NotreAssistance", fontWeight: FontWeight.w700, fontSize: 30,),
-                DSFRText(text: precisions), 
-              ]
-            ),
-          ],
+            Row(crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                DSFRBlocMarque(intitule: intitule),
+                Column( mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:[
+                    DSFRText(text: "NotreAssistance", fontWeight: FontWeight.w700, fontSize: 30,),
+                    DSFRText(text: precisions), 
+                  ]
+                ),
+              ],
+            )
+          ]
         )
       )
     );
@@ -51,9 +55,9 @@ class DSFRBlocMarque extends StatelessWidget{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset("packages/flutter_dsfr/assets/images/marianne.svg", width: 50),
+          SvgPicture.asset("assets/images/marianne.svg", width: 50,),
           Container(child: DSFRText(text: intitule.toUpperCase(), fontWeight: FontWeight.w700,), width: 200, margin: EdgeInsets.only(top: 5, bottom: 5),),
-          SvgPicture.asset("packages/flutter_dsfr/assets/images/devise.svg", colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn), width: 50,),
+          SvgPicture.asset("assets/images/devise.svg", colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn), width: 50,),
         ],)
     );
   }
