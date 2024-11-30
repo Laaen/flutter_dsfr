@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dsfr/navigation.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import './text.dart';
 
@@ -8,17 +9,20 @@ export 'package:flutter_svg/flutter_svg.dart';
 /// Header utilisable en guise de AppBar
 class DSFRHeader extends StatelessWidget implements PreferredSizeWidget{
 
-  DSFRHeader({super.key, required this.siteName, required this.intitule, this.precisions = ""});
+  DSFRHeader({super.key, required this.siteName, required this.intitule, this.precisions = "", this.nav});
 
   final String siteName;
   final String intitule;
   final String precisions;
+  final DSFRNavigation? nav;
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(preferredSize: Size.fromHeight(150),
-      child: Container(margin: EdgeInsets.all(20), child:
-        Column(
+    return PreferredSize(preferredSize: Size.fromHeight(200),
+      child: Column(children:[
+        Container(padding: EdgeInsets.all(15),
+        decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 1, color: const Color.fromARGB(255, 104, 104, 104)))),
+        child: Column(
           children: [
             Row(crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -26,20 +30,18 @@ class DSFRHeader extends StatelessWidget implements PreferredSizeWidget{
                 Column( mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:[
-                    DSFRText(text: "NotreAssistance", fontWeight: FontWeight.w700, fontSize: 30,),
-                    DSFRText(text: precisions), 
-                  ]
-                ),
-              ],
-            )
-          ]
+                    DSFRText(text: siteName, fontWeight: FontWeight.w700, fontSize: 30,),
+                    DSFRText(text: precisions),
+              ]),
+            ]),
+          ])
         )
-      )
+      , if(nav != null) nav!])
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(150);
+  Size get preferredSize => const Size.fromHeight(200);
 }
 
 /// Le bloc de marque (Marianne + intitulé + devise)

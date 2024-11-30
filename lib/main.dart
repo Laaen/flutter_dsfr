@@ -37,9 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    DSFRNavigation nav = DSFRNavigation(linksData: [(texte: "Blip", destination: "/test"), (texte: "Tableau de bord", destination: "/test")]);
     return Scaffold(
-      appBar: DSFRHeader(siteName: "Notre Assistance", intitule: "République française", precisions: "La meilleure appli du monde",),
-      body: DSFRNavigationLien(texte: "Test", destination: "/test")
+      appBar: DSFRHeader(siteName: "Notre Assistance", intitule: "République française", precisions: "La meilleure appli du monde", nav: nav),
     );
   }
 }

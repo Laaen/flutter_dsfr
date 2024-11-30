@@ -29,7 +29,6 @@ class DSFRText extends StatelessWidget{
       style: TextStyle(fontFamily: font.value,
                       fontSize: fontSize,
                       fontWeight: fontWeight, 
-                      package: "flutter_dsfr", 
                       height: 1.03),
     );
   }
