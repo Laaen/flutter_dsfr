@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
     DSFRNavigation nav = DSFRNavigation(linksData: [(texte: "Blip", destination: "/test"), (texte: "Tableau de bord", destination: "/test")]);
     return Scaffold(
       appBar: DSFRHeader(siteName: "Notre Assistance", intitule: "République française", precisions: "La meilleure appli du monde", nav: nav),
+      body: DSFRCardDialog(intitule: "Test", texte: "Blip", detailHaut: "Bonjourent", detailBas: "C'est de la merde",)
     );
   }
 }

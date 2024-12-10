@@ -7,6 +7,10 @@ import './text.dart';
 export 'package:flutter_svg/flutter_svg.dart';
 
 /// Header utilisable en guise de AppBar
+/// siteName => Nom du site, fait offcie de titre
+/// intitule => Intitulé présent danc le bloc de marque
+/// precisions => Sous titre, placé directement sous le siteName
+/// nav => DSFRNavigation si l'on veut ajouter un menu direcetement sous le header
 class DSFRHeader extends StatelessWidget implements PreferredSizeWidget{
 
   DSFRHeader({super.key, required this.siteName, required this.intitule, this.precisions = "", this.nav});

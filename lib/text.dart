@@ -14,11 +14,12 @@ enum DSFRFont{
 /// Text in DSFR format
 class DSFRText extends StatelessWidget{
 
-  DSFRText({super.key, required this.text, this.font = DSFRFont.marianne, this.fontSize = 20, this.fontWeight, this.lineHeight});
+  DSFRText({super.key, required this.text, this.font = DSFRFont.marianne, this.fontSize = 20, this.fontWeight, this.lineHeight, this.color = Colors.white});
   
   final String text;
   final DSFRFont font;
   final double fontSize;
+  final Color color;
   final FontWeight? fontWeight;
   /// Space between two lines
   final double? lineHeight;
@@ -27,6 +28,7 @@ class DSFRText extends StatelessWidget{
   Widget build(BuildContext context) {
     return Text(text, 
       style: TextStyle(fontFamily: font.value,
+                      color: color,
                       fontSize: fontSize,
                       fontWeight: fontWeight, 
                       height: 1.03),

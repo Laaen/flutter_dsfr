@@ -6,6 +6,9 @@ import 'package:flutter_dsfr/header.dart';
 
 export './flutter_dsfr.dart';
 export './header.dart';
+export './navigation.dart';
+export './card.dart';
+export './text.dart';
 
 
 void main(){
