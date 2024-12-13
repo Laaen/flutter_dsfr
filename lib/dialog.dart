@@ -9,11 +9,16 @@ class DSFRDialog extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Dialog(child: Column(
-      children: [
-        Container(margin: EdgeInsets.all(15), child: DSFRText(text: titre, fontSize: 26, fontWeight: FontWeight.w700,)),
-        DSFRText(text: texte)
-      ])
+    return Dialog(
+      shape: ContinuousRectangleBorder(),
+      backgroundColor: ThemeData.dark().dialogBackgroundColor,
+      child: Column(
+        children: [
+          Container(alignment: Alignment.topRight,
+            child: Text("Test"),),
+          Container(margin: EdgeInsets.all(15), child: DSFRText(text: titre, fontSize: 26, fontWeight: FontWeight.w700,)),
+          DSFRText(text: texte)
+        ])
     );
   }
 

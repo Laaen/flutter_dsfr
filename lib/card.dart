@@ -16,9 +16,11 @@ class DSFRCardDialog extends StatelessWidget{
   Widget build(BuildContext context) {
     return TextButton(onPressed: () => showDialog(context: context, builder: (BuildContext context){ return DSFRDialog(titre: intitule, texte: texte);}),
       style: TextButton.styleFrom(foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-                                    shape: ContinuousRectangleBorder()),
+                                    shape: ContinuousRectangleBorder(), tapTargetSize: MaterialTapTargetSize.shrinkWrap, padding: EdgeInsets.zero),
                                   
-     child: DSFRCard(intitule: intitule, texte: texte, detailBas: detailBas, detailHaut: detailHaut,));
+     child: Container(child: DSFRCard(intitule: intitule, texte: texte, detailBas: detailBas, detailHaut: detailHaut,),
+     width: 200,
+     height: 400));
   }
 
 }
@@ -40,9 +42,10 @@ class DSFRCard extends StatelessWidget{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if(detailHaut != null) Container(margin: EdgeInsets.only(bottom: 15), child: DSFRText(text: detailHaut!, color: Color.fromARGB(255, 131, 131, 131), fontWeight: FontWeight.normal, fontSize: 15,)),
+          if(detailHaut != null) Container(margin: EdgeInsets.only(bottom: 20), child: DSFRText(text: detailHaut!, color: Color.fromARGB(255, 131, 131, 131), fontWeight: FontWeight.normal, fontSize: 15,)),
           DSFRText(text: intitule, fontWeight: FontWeight.w600, fontSize: 25, color: Color.fromARGB(255, 106, 106, 244)),
           Container(margin: EdgeInsets.only(top: 15), child: DSFRText(text: texte, fontWeight: FontWeight.normal, fontSize: 16,)),
+          Expanded(child: Container()),
           if(detailBas != null) Container(margin: EdgeInsets.only(bottom: 15), child: DSFRText(text: detailBas!, color: Color.fromARGB(255, 131, 131, 131), fontWeight: FontWeight.normal, fontSize: 15,))
         ],
       ),

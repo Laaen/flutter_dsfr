@@ -21,7 +21,7 @@ class DSFRNavigationLien extends StatelessWidget{
                                     minimumSize: Size.infinite,
                                     shape: ContinuousRectangleBorder()),
         onPressed: () => context.go(destination),
-        child: Container(child: DSFRText(text: texte), ),
+        child: Container(child: DSFRText(text: texte, maxLines: 1,), ),
       )
     );
   }

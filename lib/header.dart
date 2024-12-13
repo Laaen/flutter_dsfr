@@ -1,4 +1,5 @@
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/navigation.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,8 +35,8 @@ class DSFRHeader extends StatelessWidget implements PreferredSizeWidget{
                 Column( mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:[
-                    DSFRText(text: siteName, fontWeight: FontWeight.w700, fontSize: 30,),
-                    DSFRText(text: precisions),
+                    DSFRText(text: siteName, fontWeight: FontWeight.w700, fontSize: 30, maxLines: 1,),
+                    DSFRText(text: precisions, maxLines: 1,),
               ]),
             ]),
           ])
@@ -62,7 +63,14 @@ class DSFRBlocMarque extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SvgPicture.asset("assets/images/marianne.svg", width: 50,),
-          Container(child: DSFRText(text: intitule.toUpperCase(), fontWeight: FontWeight.w700,), width: 200, margin: EdgeInsets.only(top: 5, bottom: 5),),
+          Container(child: AutoSizeText(intitule.toUpperCase(), maxLines: 2, style: TextStyle(fontFamily: DSFRFont.marianne.value,
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700, 
+                      height: 1.03)),
+            width: 200, 
+            margin: EdgeInsets.only(top: 5, bottom: 5),
+          ),
           SvgPicture.asset("assets/images/devise.svg", colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn), width: 50,),
         ],)
     );
