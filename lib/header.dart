@@ -24,24 +24,27 @@ class DSFRHeader extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return PreferredSize(preferredSize: Size.fromHeight(200),
-      child: Column(children:[
-        Container(padding: EdgeInsets.all(15),
-        decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 1, color: const Color.fromARGB(255, 104, 104, 104)))),
-        child: Column(
-          children: [
-            Row(crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                DSFRBlocMarque(intitule: intitule),
-                Column( mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children:[
-                    DSFRText(text: siteName, fontWeight: FontWeight.w700, fontSize: 30, maxLines: 1,),
-                    DSFRText(text: precisions, maxLines: 1,),
+      child: Container(color: Color.fromARGB(255, 30, 30, 30),
+        child:
+        Column(children:[
+          Container(padding: EdgeInsets.all(15),
+          decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 1, color: const Color.fromARGB(255, 53, 53, 53)))),
+          child: Column(
+            children: [
+              Row(crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  DSFRBlocMarque(intitule: intitule),
+                  Column( mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children:[
+                      DSFRText(text: siteName, fontWeight: FontWeight.w700, fontSize: 30, maxLines: 1,),
+                      DSFRText(text: precisions, maxLines: 1,),
+                ]),
               ]),
-            ]),
-          ])
-        )
-      , if(nav != null) nav!])
+            ])
+          )
+        , if(nav != null) nav!])
+      )
     );
   }
 
